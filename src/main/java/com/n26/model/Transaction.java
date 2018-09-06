@@ -1,19 +1,36 @@
 package com.n26.model;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Data
-@NoArgsConstructor
+@com.fasterxml.jackson.annotation.JsonAutoDetect(fieldVisibility = Visibility.ANY)
 public class Transaction {
-
-    @Getter
-    @Setter
+    
     private double amount;
-    @Getter
-    @Setter
-    private long timestamp;
+    private String timestamp;
+    
+    public Transaction() {}
+    
+    public Transaction(double amount, String timestamp) {
+        // TODO Auto-generated constructor stub
+        this.amount = amount;
+        this.timestamp = timestamp;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+    
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+    
+    public String getTimestamp() {
+        return timestamp;
+    }
+    
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+    
     
 }
